@@ -1,0 +1,3 @@
+[submodule "deps/b63"]
+	path = deps/b63
+	url = https://github.com/okuvshynov/b63

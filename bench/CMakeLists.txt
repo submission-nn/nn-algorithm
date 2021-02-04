@@ -1,0 +1,9 @@
+file(GLOB BENCH_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+foreach(benchfile ${BENCH_SOURCES})
+    file(RELATIVE_PATH filename ${CMAKE_CURRENT_SOURCE_DIR} ${benchfile})
+    string(REPLACE ".cpp" "" file ${filename})
+    add_executable(bench_b63_${file} ${benchfile} )
+    target_link_libraries(bench_b63_${file} m -lgtest -pthread )
+endforeach(benchfile ${BENCH_SOURCES})
+
+add_subdirectory(b63)
